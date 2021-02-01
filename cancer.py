@@ -43,9 +43,8 @@ def accuracy(y, y_hat):
     return np.mean(y==y_hat)
 
 model = Model()
-model.add_layer(Layer(30, 6, relu))
-#model.add_layer(Layer(18, 6, relu))
-model.add_layer(Layer(6, 2, softmax))
+model.add_layer(Layer(30, 7, relu)))
+model.add_layer(Layer(7, 2, softmax))
 
 model.compile(CrossEntropyLoss, DataLoader, accuracy, batches_per_epoch=(x_train.shape[0]//16)+1, n_workers=12)
 model.fit(X=x_train, y=y_train, epochs=100)
