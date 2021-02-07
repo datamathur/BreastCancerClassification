@@ -42,49 +42,5 @@ The dataset has <b>569 instances, 357 for benign and 212 for malignant</b>. Ther
 27.	worst concave points = "worst" or largest mean value for number of concave portions of the contour
 28.	worst fractal dimension = "worst" or largest mean value for "coastline approximation" – 1<br>
 <br>
-## Models
-The main aim of the project is to compare the performances of Support Vector Machine model and Neural Networks model (with and without backpropagation) on a classification job where the number of instances is relatively few (<1000). <br>
-All these models are trained on 512 training examples and tested on 57 validation examples which are prepared by a 90 - 10 split of annotated data.<br>
-<br>
-### A. Support Vector Machine (SVM)
-A Support Vector Machine (SVM) is a binary linear classification whose decision boundary is explicitly constructed to minimize generalization error. It is a very powerful and versatile Machine Learning model, capable of performing linear or nonlinear classification, regression and even outlier detection.<br>
-SVM is well suited for classification of complex but small or medium sized datasets.<br>
-<br>
-The model uses RBF kernel with degree 3 and the regularization parameter is 1. The result from this model is that accuracy obtained is 99.12% on validation set.
-<br>
-### B. Neural Networks (with Backpropagation)
-The second model used to train the dataset is Neural Networks. The model is composed of Multi-Layer Perceptron with 1 hidden layer(with 7 neurons).<br> 
-The model uses Adam optimizer over Categorical Cross-entropy loss function to train the weights. The model is trained for 100 epochs and the batch-size is 16 examples per batch. After training, the accuracy obtained on validation set is 87.71%.<br>
-<br>
-### C. Neural Networks (without Backpropagation)
-The last model uses Particle Swarm Optimization (PSO) technique to optimize the weights of the neural network and increase the accuracy of the model. This approach rules out the use of backpropagation to optimize weights of the neural network.<br> 
-A basic variant of the PSO algorithm works by having a population (called a swarm) of candidate solutions (called particles). All of particles have fitness values which are evaluated by the fitness function to be optimized, and have velocities which direct the flying of the particles. The particles fly through the problem space by following the current optimum particles. A number of particles are initialized randomly within the search space. Each particle has a very simple 'memory' of its personal best solution so far, called 'pbest'. This is the best solution (fitness) it has achieved so far. The global best solution for each iteration is also found and labelled 'gbest'. It is the best value, obtained so far by any particle in the population. On each iteration, every particle is moved a certain distance from its current location, influenced a random amount by the pbest and gbest values.<br>
-<br>
-<i> <b>vi(t+1) = w.vi(t) + c1.r1(pbesti - xi(t)) + c2.r2(gbest - xi(t)) <br>
-  xi(t+1) = xi(t) + vi(t+1)</b><br>
-here, i є 1 …. P (P = number of particles) <br>
-r1, r2 are random numbers uniformly distributed between [0,1] <br>
-c1, c2 are acceleration constants values of which are taken 2 </i> <br>
-In training this model, the swarm consists of 12 particles of 233 dimensions (all the weights of the neural networks). Now we use this swarm intelligence to optimize the weights of the neural network by optimizing their fitness value over fitness function. The fitness function that’s used here is Categorical Cross-entropy loss function of the neural network. This way, by optimizing the fitness function it automatically reduces the loss function which in turn increases the accuracy of classifier.<br>
-<br>
-The architecture used for this model is the same as the one used in Model B. The model was trained for 100 epochs with batch size of 16 examples per batch. The accuracy obtained over the validation set was 92.98%.<br>
-<br>
-## Results
-The summary of the results from all the three models are formulated in the table below.<br>
-<br>
-| Model |	Accuracy | Time taken |
-| ----- | -------- | ---------- | 
-| Model A	| 99.12%	| 3.14 seconds |
-| Model B	| 87.71%	| 6.56 seconds |
-| Model C	| 92.98%	| 19.34 seconds |
-<i>(Table 1 – Summary of results of different models)</i>
-<br>
-Model A – Support Vector Machine <br>
-Model B – Neural Networks (with backpropagation)<br>
-Model C – Neural Networks (without backpropagation)<br>
-<br>
-## Conclusions
-The following conclusions can be drawn from the results of this project: -<br>
-1.	Support Vector Machine (SVM) models performs a better classification task than Neural Networks models when the number of training examples are small (in our case only 512). In our case, the SVM model took half the time to get around 12% more accuracy than Neural Network (with backpropagation) and took around 1/6th time to get around 5% more accuracy than Neural Networks (without backpropagation).<br>
-2.	When training on a smaller dataset, Neural Networks perform better with PSO than Backpropagation, although it takes more time.<br>
+
 
