@@ -40,8 +40,7 @@ The dataset has <b>569 instances, 357 for benign and 212 for malignant</b>. Ther
 25.	worst compactness = "worst" or largest mean value for perimeter^2 / area - 1.0
 26.	worst concavity = "worst" or largest mean value for severity of concave portions of the contour
 27.	worst concave points = "worst" or largest mean value for number of concave portions of the contour
-28.	worst fractal dimension = "worst" or largest mean value for "coastline approximation" – 1
-<br>
+28.	worst fractal dimension = "worst" or largest mean value for "coastline approximation" – 1<br>
 <br>
 ## Models
 The main aim of the project is to compare the performances of Support Vector Machine model and Neural Networks model (with and without backpropagation) on a classification job where the number of instances is relatively few (<1000). <br>
@@ -62,7 +61,7 @@ The last model uses Particle Swarm Optimization (PSO) technique to optimize the 
 A basic variant of the PSO algorithm works by having a population (called a swarm) of candidate solutions (called particles). All of particles have fitness values which are evaluated by the fitness function to be optimized, and have velocities which direct the flying of the particles. The particles fly through the problem space by following the current optimum particles. A number of particles are initialized randomly within the search space. Each particle has a very simple 'memory' of its personal best solution so far, called 'pbest'. This is the best solution (fitness) it has achieved so far. The global best solution for each iteration is also found and labelled 'gbest'. It is the best value, obtained so far by any particle in the population. On each iteration, every particle is moved a certain distance from its current location, influenced a random amount by the pbest and gbest values.<br>
 <br>
 <i> <b>vi(t+1) = w.vi(t) + c1.r1(pbesti - xi(t)) + c2.r2(gbest - xi(t)) <br>
-  xi(t+1) = xi(t) + vi(t+1)</b>
+  xi(t+1) = xi(t) + vi(t+1)</b><br>
 here, i є 1 …. P (P = number of particles) <br>
 r1, r2 are random numbers uniformly distributed between [0,1] <br>
 c1, c2 are acceleration constants values of which are taken 2 </i> <br>
